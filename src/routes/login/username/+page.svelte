@@ -31,7 +31,6 @@
   
           isAvailable = !exists;
           loading = false;
-  
       }, 500);
   
     }
@@ -58,9 +57,7 @@
 
         username = '';
         isAvailable = false;
-    
     }
-  
 </script>
   
   
