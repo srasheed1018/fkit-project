@@ -1,10 +1,15 @@
 <script>
-    import { userData } from "$lib/firebase";
+  import { userData, auth } from "$lib/firebase";
+  import { signOut } from "firebase/auth";
 
+  async function signOutSSR() {
+    const res = await fetch("/api/signin", { method: "DELETE" });
+    await signOut(auth);
+  }
   </script>
-  
+
   <svelte:head>
-    <title>Kung.foo - a place for links</title>
+    <title>LinkUp - share your stuff</title>
     <meta name="description" content="Demo project for the Full SvelteKit Course by Fireship" />
   </svelte:head>
   
@@ -13,15 +18,17 @@
     <div class="hero bg-base-200">
       <div class="hero-content text-center">
         <div class="w-full">
-          <h1 class="text-7xl font-bold">Kung.foo</h1>
-          <p class="py-6 text-2xl">One simple link to share your entire developer portfolio</p>
+          <h1 class="text-7xl font-bold">Welcome to <span class="text-purple-600">LinkUp</span>!</h1>
+          <p class="py-6 text-2xl">Set up one place for all your important links.</p>
           {#if $userData?.username}
-            <a href="/{$userData.username}/edit" class="btn btn-primary">Edit Profile</a>
+            <a href="/{$userData.username}/edit" class="btn btn-primary mx-1">Edit Profile</a>
+            <button on:click={signOutSSR} class="btn btn-warning mx-1">
+              Sign Out
+            </button>
           {:else}
             <a href="/login" class="btn btn-primary">Get Started</a>
-            <a href="/fireship" class="btn btn-secondary">Example Profile</a>
+            <a href="/sid_ok" class="btn btn-secondary">Example Profile</a>
           {/if}
-          <p class="py-6">Learn how to build this app from scratch in the <a class="link" href="https://fireship.io/courses/sveltekit">Full SvelteKit Course</a></p>
         </div>
       </div>
     </div>

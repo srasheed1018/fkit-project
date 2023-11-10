@@ -27,6 +27,10 @@
           value={data.bio}
         />
       </div>
-      <button class="btn btn-primary my-5">Update Bio</button>
+      <div>
+        <button class="btn btn-primary my-5">Update Bio</button>
+        <a href="/" class="btn btn-secondary">&lt; Go Back</a>
+      </div>
+      <span>TODO: make back to go user page</span>
     </form>
   </main>

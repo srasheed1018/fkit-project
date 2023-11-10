@@ -12,7 +12,6 @@
   
   
   <main class="prose text-center mx-auto mt-8">
-
     <h1 class="text-7xl text-purple-500 py-3">
       @{data.username}
     </h1>
@@ -32,5 +31,7 @@
         </li>
       {/each}
     </ul>
-  
+    <div class="mt-10">Made using 
+      <a class="text-purple-600" href="/">LinkUp</a>
+    </div>
   </main>

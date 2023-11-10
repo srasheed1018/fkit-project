@@ -25,13 +25,11 @@
   }
 </script>
 
-<h2>Login</h2>
-
 {#if $user}
   <h2 class="card-title">Welcome, {$user.displayName}</h2>
   <p class="text-center text-success">You are logged in</p>
-  <button class="btn btn-warning" on:click={signOutSSR}>Sign out</button>
-  <a class="btn btn-primary" href="/login/username">Choose Username</a>
+  <button class="btn btn-warning my-5" on:click={signOutSSR}>Sign out</button>
+  <a class="btn btn-primary" href="/login/username">Choose Username &gt;</a>
 {:else}
   <button class="btn btn-primary" on:click={signInWithGoogle}>Sign in with Google</button>
 {/if}

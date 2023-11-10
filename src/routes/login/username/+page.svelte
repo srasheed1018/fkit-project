@@ -43,11 +43,11 @@
         username, 
         photoURL: $user?.photoURL ?? null,
         published: true,
-        bio: 'I am the Walrus',
+        bio: 'Hi! This is a bio.',
         links: [
             {
             title: 'Test Link',
-            url: 'https://kung.foo',
+            url: 'https://google.com',
             icon: 'custom'
             }
         ]
@@ -70,7 +70,9 @@
       <p class="text-sm">(Usernames cannot be changed)</p>
       <a class="btn btn-primary" href="/login/photo">Upload Profile Image</a>
     {:else}
-        <form class="w-2/5" on:submit|preventDefault={confirmUsername}>
+        <h2 class="text-sm">Please enter your username:</h2>
+        <h4 class="text-xs text-yellow-500">(Usernames cannot be changed)</h4>
+        <form class="w-full" on:submit|preventDefault={confirmUsername}>
             <input
                 type="text"
                 placeholder="Username"
@@ -81,7 +83,7 @@
                 class:input-warning={isTaken}
                 class:input-success={isAvailable && isValid && !loading}
             />
-            <div class="my-4 min-h-16 px-8 w-full">
+            <div class="my-4 min-h-18 w-full">
                 {#if loading}
                     <p class="text-secondary">Checking availability of @{username}...</p>
                 {/if}
@@ -98,10 +100,11 @@
                     </p>
                 {/if}
     
-                {#if isAvailable}
+                {#if isAvailable && isValid}
                     <button class="btn btn-success">Confirm username @{username} </button>
                 {/if}
             </div>
         </form>
     {/if}
+    <a class="btn btn-primary" href="/login">&lt; go back</a>
 </AuthCheck>
