@@ -100,6 +100,7 @@
           Profile Link:
           <a
             href={`/${$userData?.username}`}
+            target="_blank"
             class="link link-accent"
           >
             https://replace-url-here/{$userData?.username}

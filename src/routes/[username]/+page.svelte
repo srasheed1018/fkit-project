@@ -26,12 +26,12 @@
     <p class="text-xl my-8">{data.bio ?? "no bio yet..."}</p>
     <ul class="list-none">
       {#each data.links as item}
-        <li>
+        <li class="py-1">
           <UserLink {...item} />
         </li>
       {/each}
     </ul>
-    <div class="mt-10">Made using 
+    <div class="my-10">Made using 
       <a class="text-purple-600" href="/">LinkUp</a>
     </div>
   </main>

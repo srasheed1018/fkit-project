@@ -2,6 +2,7 @@
     import type { PageData } from "./$types";
     import { page } from '$app/stores';
     import { enhance } from "$app/forms";
+    import { userData } from "$lib/firebase";
 
   
     export let data: PageData;
@@ -29,8 +30,11 @@
       </div>
       <div>
         <button class="btn btn-primary my-5">Update Bio</button>
-        <a href="/" class="btn btn-secondary">&lt; Go Back</a>
+        {#if $userData?.username}
+          <a href={`/${$userData?.username}/edit`} class="btn btn-secondary">&lt; Go Back</a>
+        {:else}
+          <a href="/" class="btn btn-secondary">&lt; Go Back</a>
+        {/if}
       </div>
-      <span>TODO: make back to go user page</span>
     </form>
   </main>
