@@ -20,6 +20,7 @@
         <div class="w-full">
           <h1 class="text-7xl font-bold">Welcome to <span class="text-purple-600">LinkUp</span>!</h1>
           <p class="py-6 text-2xl">Set up one place for all your important links.</p>
+          <p class="py-6 text-xl">Powered by  <img class="inline w-6 m-1" src="/svelte.png" alt="svelte"/>  Sveltekit and  <img class="inline w-6 m-1" src="/firebase.png" alt="firebase" />  Firebase</p>
           {#if $userData?.username}
             <a href="/{$userData.username}/edit" class="btn btn-primary mx-1">Edit Profile</a>
             <button on:click={signOutSSR} class="btn btn-warning mx-1">
