@@ -19,17 +19,17 @@
       <div class="hero-content text-center">
         <div class="w-full">
           <h1 class="text-7xl font-bold">Welcome to <span class="text-purple-600">LinkUp</span>!</h1>
-          <p class="py-6 text-2xl">Set up one place for all your important links.</p>
-          <p class="py-6 text-xl">Powered by  <img class="inline w-6 m-1" src="/svelte.png" alt="svelte"/>  Sveltekit and  <img class="inline w-6 m-1" src="/firebase.png" alt="firebase" />  Firebase</p>
+          <p class="py-16 text-2xl">Set up one place for all your important links.</p>
           {#if $userData?.username}
-            <a href="/{$userData.username}/edit" class="btn btn-primary mx-1">Edit Profile</a>
-            <button on:click={signOutSSR} class="btn btn-warning mx-1">
-              Sign Out
-            </button>
+          <a href="/{$userData.username}/edit" class="btn btn-primary mx-1">Edit Profile</a>
+          <button on:click={signOutSSR} class="btn btn-warning mx-1">
+            Sign Out
+          </button>
           {:else}
-            <a href="/login" class="btn btn-primary">Get Started</a>
-            <a href="/sid_ok" class="btn btn-secondary">Example Profile</a>
+          <a href="/login" class="btn btn-primary">Get Started</a>
+          <a href="/sid_ok" class="btn btn-secondary">Example Profile</a>
           {/if}
+          <p class="pt-36 text-xl">Powered by <span class="block m-3"></span> <img class="inline w-6 m-1" src="/svelte.png" alt="svelte"/>  Sveltekit and  <img class="inline w-6 m-1" src="/firebase.png" alt="firebase" />  Firebase</p>
         </div>
       </div>
     </div>
