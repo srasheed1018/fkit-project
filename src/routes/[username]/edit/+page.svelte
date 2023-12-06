@@ -14,6 +14,7 @@
     updateDoc,
   } from "firebase/firestore";
   import { writable } from "svelte/store";
+  import { copy } from 'svelte-copy';
 
   const icons = [
     "Twitter",
@@ -96,16 +97,20 @@
       </h1>
   
       <div class="text-center mb-8">
-        <p>
-          Profile Link:
+        <p class="space-x-2 my-6">
           <a
             href={`/${$userData?.username}`}
             target="_blank"
-            class="link link-accent"
+            class="btn btn-primary"
           >
-            https://replace-url-here/{$userData?.username}
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> View Profile
           </a>
+          <button class="btn btn-accent" use:copy={`https://fkit-project-918ef.web.app/${$userData?.username}`}>
+            copy to clipboard
+          </button>
         </p>
+
+        
       </div>
   
       <div class="text-center my-4">
